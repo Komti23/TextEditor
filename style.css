@@ -1,0 +1,126 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    text-align: center;
+    background-color: #121212;
+    color: #ffffff;
+    transition: background-color 0.3s, color 0.3s;
+}
+body.light-theme {
+    background-color: #ffffff;
+    color: #121212;
+}
+#toolbar {
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+button, input[type="color"], input[type="file"], select {
+    padding: 8px 12px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+}
+input[type="color"] {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    margin: 0;
+}
+button.active {
+    background-color: #007bff;
+}
+button:hover, select:hover {
+    background-color: #444;
+    transform: scale(0.96);
+}
+#editor {
+    border: 1px solid #444;
+    min-height: 300px;
+    padding: 20px;
+    outline: none;
+    text-align: left;
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin: 0 auto;
+    width: 210mm;
+    height: 297mm; 
+    box-sizing: border-box;
+    transition: background-color 0.3s, color 0.3s, border 0.3s;
+}
+body.light-theme #editor {
+    background-color: #f5f5f5;
+    color: #121212;
+    border: 1px solid #ccc;
+}
+#fontSizeSlider {
+    width: 150px;
+}
+#fontSizeValue {
+    font-size: 16px;
+    color: #fff;
+    margin-left: 10px;
+}
+#theme-toggle {
+    margin-top: 20px;
+    padding: 8px 15px;
+    cursor: pointer;
+    background-color: #444;
+    color: #fff;
+}
+body.light-theme #theme-toggle {
+    background-color: #333;
+}
+select {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.icon-button {
+    font-size: 18px;
+}
+#fontSizeValue {
+    font-size: 18px;
+}
+#toolbar {
+    gap: 15px;
+}
+.toolbar-button {
+    display: inline-block;
+    transition: all 0.2s ease;
+}
+.toolbar-button:hover {
+    background-color: #444;
+    border-radius: 7px;
+    transform: scale(0.96);
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0); 
+    }
+}
+
+.foot {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background-color: #121212;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.5s ease-out;
+}

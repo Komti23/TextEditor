@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Текстовый редактор</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/docx/7.1.1/docx.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+    </style>
+</head>
+<body>
+    <h2>Текстовый редактор</h2>
+    <div id="toolbar">
+        <div class="toolbar-button">
+            <button id="bold" onclick="toggleFormat('bold')"><b>Ж</b></button>
+        </div>
+        <div class="toolbar-button">
+            <button id="italic" onclick="toggleFormat('italic')"><i>К</i></button>
+        </div>
+        <div class="toolbar-button">
+            <button id="underline" onclick="toggleFormat('underline')"><u>Ч</u></button>
+        </div>
+        <div class="toolbar-button">
+            <button id="strikeThrough" onclick="toggleFormat('strikeThrough')">З</button>
+        </div>
+        <div class="toolbar-button">
+            <button id="ul" onclick="toggleFormat('insertUnorderedList')">• Список</button>
+        </div>
+        <div class="toolbar-button">
+            <button id="ol" onclick="toggleFormat('insertOrderedList')">1. Список</button>
+        </div>
+        <div class="toolbar-button">
+            <button id="left" onclick="toggleFormat('justifyLeft')">⬅</button>
+        </div>
+        <div class="toolbar-button">
+            <button id="center" onclick="toggleFormat('justifyCenter')">⬆</button>
+        </div>
+        <div class="toolbar-button">
+            <button id="right" onclick="toggleFormat('justifyRight')">➡</button>
+        </div>
+        <div class="toolbar-button">
+            <input type="color" id="textColor" onchange="changeColor('foreColor', this.value)">
+        </div>
+        <div class="toolbar-button">
+            <input type="color" id="bgColor" onchange="changeColor('hiliteColor', this.value)">
+        </div>
+        <div class="toolbar-button">
+            <label for="fontSizeSlider">Размер шрифта:</label>
+            <input type="range" id="fontSizeSlider" min="1" max="7" step="1" value="3" onchange="updateFontSize()">
+            <span id="fontSizeValue">3</span>
+        </div>
+        <div class="toolbar-button">
+            <button onclick="insertImage()">🖼️</button>
+        </div>
+        <div class="toolbar-button">
+            <button onclick="insertLocalImage()">📂</button>
+        </div>
+        <div class="toolbar-button">
+            <button onclick="insertLink()">🔗</button>
+        </div>
+        <div class="toolbar-button">
+            <button onclick="saveFile()">💾</button>
+        </div>
+        <div class="toolbar-button">
+            <button onclick="printDocument()">🖨️</button>
+        </div>
+    </div>
+    <footer class="foot">by Komti</footer>
+    <div id="editor" contenteditable="true" onkeyup="updateToolbar()"></div>
+    <button id="theme-toggle" onclick="toggleTheme()">Переключить тему</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
